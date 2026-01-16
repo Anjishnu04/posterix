@@ -17,8 +17,8 @@ interface HeaderProps {
 
 const logoStyles = `
   @keyframes logoGlow {
-    0%, 100% { box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); }
-    50% { box-shadow: 0 0 25px rgba(59, 130, 246, 0.5); }
+    0%, 100% { box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); }
+    50% { box-shadow: 0 0 30px rgba(59, 130, 246, 0.4); }
   }
   
   @keyframes logoBounce {
@@ -28,19 +28,6 @@ const logoStyles = `
   
   .logo-animated {
     animation: logoGlow 3s ease-in-out infinite, logoBounce 2s ease-in-out infinite;
-  }
-  
-  .logo-bracket::before {
-    content: '';
-    position: absolute;
-    left: -8px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 12px;
-    height: 60%;
-    border: 3px solid white;
-    border-right: none;
-    border-radius: 4px 0 0 4px;
   }
 `;
 
@@ -77,8 +64,8 @@ export function Header({ searchQuery, setSearchQuery, cartItemCount, onCartClick
           <div className="flex items-center justify-between py-3">
             {/* Logo */}
             <div className="shrink-0">
-              <div className="logo-animated bg-black rounded-full px-8 py-3 hover:scale-105 transition-transform duration-300 cursor-pointer relative logo-bracket" style={{minWidth: '200px'}}>
-                <h1 className="text-3xl font-black text-white text-center tracking-tight pl-4" style={{fontFamily: 'Impact, Arial Black, sans-serif', letterSpacing: '-0.02em', fontWeight: 900}}>
+              <div className="logo-animated rounded-full px-8 py-3 hover:scale-105 transition-transform duration-300 cursor-pointer relative logo-bracket" style={{minWidth: '200px'}}>
+                <h1 className="text-3xl font-black text-black text-center tracking-tight pl-4" style={{fontFamily: 'Impact, Arial Black, sans-serif', letterSpacing: '-0.02em', fontWeight: 900}}>
                   POSTERIX
                 </h1>
               </div>
