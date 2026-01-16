@@ -46,7 +46,13 @@ export function Header({ searchQuery, setSearchQuery, cartItemCount, onCartClick
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="shrink-0">
-            <h1 className="text-2xl font-bold text-gray-900">Posterix</h1>
+            <div className="flex items-center gap-2">
+              <div className="bg-black rounded-lg px-3 py-1">
+                <h1 className="text-2xl font-black text-white tracking-wider" style={{fontFamily: 'Impact, sans-serif', letterSpacing: '-0.02em'}}>
+                  POSTERIX
+                </h1>
+              </div>
+            </div>
           </div>
 
           {/* Center Navigation */}
