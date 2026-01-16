@@ -64,8 +64,16 @@ export function Header({ searchQuery, setSearchQuery, cartItemCount, onCartClick
           <div className="flex items-center justify-between py-3">
             {/* Logo */}
             <div className="shrink-0">
-              <div className="logo-animated rounded-full px-8 py-3 hover:scale-105 transition-transform duration-300 cursor-pointer relative logo-bracket" style={{minWidth: '200px'}}>
-                <h1 className="text-3xl font-black text-black text-center tracking-tight pl-4" style={{fontFamily: 'Impact, Arial Black, sans-serif', letterSpacing: '-0.02em', fontWeight: 900}}>
+              <div className="logo-animated hover:scale-105 transition-transform duration-300 cursor-pointer" style={{minWidth: '240px'}}>
+                <h1 
+                  className="text-5xl font-black text-black text-center tracking-tight" 
+                  style={{
+                    fontFamily: 'Impact, Arial Black, sans-serif', 
+                    letterSpacing: '-0.02em', 
+                    fontWeight: 900,
+                    textShadow: '2px 2px 4px rgba(0,0,0,0.2), 3px 3px 6px rgba(59, 130, 246, 0.4)'
+                  }}
+                >
                   POSTERIX
                 </h1>
               </div>
