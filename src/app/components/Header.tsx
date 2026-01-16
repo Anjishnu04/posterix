@@ -64,14 +64,14 @@ export function Header({ searchQuery, setSearchQuery, cartItemCount, onCartClick
           <div className="flex items-center justify-between py-3">
             {/* Logo */}
             <div className="shrink-0">
-              <div className="logo-animated hover:scale-105 transition-transform duration-300 cursor-pointer" style={{minWidth: '240px'}}>
+              <div className="logo-animated hover:scale-105 transition-transform duration-300 cursor-pointer">
                 <h1 
                   className="text-5xl font-black text-black text-center tracking-tight" 
                   style={{
                     fontFamily: 'Impact, Arial Black, sans-serif', 
                     letterSpacing: '-0.02em', 
                     fontWeight: 900,
-                    textShadow: '2px 2px 4px rgba(0,0,0,0.2), 3px 3px 6px rgba(59, 130, 246, 0.4)'
+                    textShadow: '3px 3px 0px rgba(0,0,0,0.15), 6px 6px 0px rgba(59, 130, 246, 0.3), 9px 9px 0px rgba(0,0,0,0.1)'
                   }}
                 >
                   POSTERIX
