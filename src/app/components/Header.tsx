@@ -1,4 +1,4 @@
-import { Search, ShoppingCart, User, ChevronDown } from 'lucide-react';
+import { Search, ShoppingCart, User, ChevronDown, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import {
   DropdownMenu,
@@ -33,6 +33,7 @@ const logoStyles = `
 
 export function Header({ searchQuery, setSearchQuery, cartItemCount, onCartClick, onLoginClick }: HeaderProps) {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
     {
@@ -66,7 +67,7 @@ export function Header({ searchQuery, setSearchQuery, cartItemCount, onCartClick
             <div className="shrink-0">
               <div className="logo-animated hover:scale-105 transition-transform duration-300 cursor-pointer">
                 <h1 
-                  className="text-5xl font-black text-black text-center tracking-tight" 
+                  className="text-3xl sm:text-5xl font-black text-black text-center tracking-tight" 
                   style={{
                     fontFamily: 'Impact, Arial Black, sans-serif', 
                     letterSpacing: '-0.03em', 
@@ -79,8 +80,8 @@ export function Header({ searchQuery, setSearchQuery, cartItemCount, onCartClick
               </div>
             </div>
 
-            {/* Center Navigation */}
-            <nav className="hidden md:flex items-center gap-1">
+            {/* Center Navigation - Hidden on Mobile */}
+            <nav className="hidden lg:flex items-center gap-1">
               {navItems.map((item) => (
                 <DropdownMenu key={item.label}>
                   <DropdownMenuTrigger asChild>
@@ -99,7 +100,7 @@ export function Header({ searchQuery, setSearchQuery, cartItemCount, onCartClick
             </nav>
 
             {/* Right Actions */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2 sm:gap-4">
               <button 
                 onClick={onLoginClick}
                 className="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors"
@@ -108,7 +109,7 @@ export function Header({ searchQuery, setSearchQuery, cartItemCount, onCartClick
               </button>
               <button 
                 onClick={onLoginClick}
-                className="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors"
+                className="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors hidden sm:block"
               >
                 <User className="h-6 w-6" />
               </button>
@@ -123,11 +124,49 @@ export function Header({ searchQuery, setSearchQuery, cartItemCount, onCartClick
                   </span>
                 )}
               </button>
+              {/* Mobile Menu Button */}
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="lg:hidden p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors"
+              >
+                {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              </button>
             </div>
           </div>
 
-          {/* Secondary Navigation */}
-          <div className="flex items-center justify-between h-10 border-t border-gray-100">
+          {/* Mobile Menu */}
+          {mobileMenuOpen && (
+            <div className="lg:hidden border-t border-gray-100 py-4">
+              {navItems.map((item) => (
+                <div key={item.label}>
+                  <button className="w-full text-left px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded transition-colors">
+                    {item.label}
+                  </button>
+                  {item.submenu.map((subitem) => (
+                    <button
+                      key={subitem}
+                      className="w-full text-left px-8 py-2 text-xs text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded transition-colors"
+                    >
+                      {subitem}
+                    </button>
+                  ))}
+                </div>
+              ))}
+              <div className="border-t border-gray-100 mt-4 pt-4">
+                {sideItems.map((item) => (
+                  <button
+                    key={item}
+                    className="w-full text-left px-4 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded transition-colors"
+                  >
+                    {item}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Secondary Navigation - Hidden on Mobile */}
+          <div className="hidden lg:flex items-center justify-between h-10 border-t border-gray-100">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <button className="text-sm text-gray-600 hover:text-gray-900 flex items-center gap-1 hover:bg-gray-50 px-2 py-1 rounded transition-colors">
