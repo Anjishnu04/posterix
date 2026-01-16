@@ -17,17 +17,30 @@ interface HeaderProps {
 
 const logoStyles = `
   @keyframes logoGlow {
-    0%, 100% { box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); }
-    50% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.6); }
+    0%, 100% { box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); }
+    50% { box-shadow: 0 0 25px rgba(59, 130, 246, 0.5); }
   }
   
   @keyframes logoBounce {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-4px); }
+    50% { transform: translateY(-3px); }
   }
   
   .logo-animated {
     animation: logoGlow 3s ease-in-out infinite, logoBounce 2s ease-in-out infinite;
+  }
+  
+  .logo-bracket::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 60%;
+    border: 3px solid white;
+    border-right: none;
+    border-radius: 4px 0 0 4px;
   }
 `;
 
@@ -61,15 +74,13 @@ export function Header({ searchQuery, setSearchQuery, cartItemCount, onCartClick
       <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Top Navigation Bar */}
-          <div className="flex items-center justify-between py-4">
+          <div className="flex items-center justify-between py-3">
             {/* Logo */}
             <div className="shrink-0">
-              <div className="flex items-center gap-2">
-                <div className="logo-animated bg-black rounded-xl px-5 py-3 hover:scale-105 transition-transform duration-300 cursor-pointer">
-                  <h1 className="text-4xl font-black text-white tracking-tighter" style={{fontFamily: 'Impact, Arial Black, sans-serif', letterSpacing: '-0.03em'}}>
-                    POSTERIX
-                  </h1>
-                </div>
+              <div className="logo-animated bg-black rounded-full px-8 py-3 hover:scale-105 transition-transform duration-300 cursor-pointer relative logo-bracket" style={{minWidth: '200px'}}>
+                <h1 className="text-3xl font-black text-white text-center tracking-tight pl-4" style={{fontFamily: 'Impact, Arial Black, sans-serif', letterSpacing: '-0.02em', fontWeight: 900}}>
+                  POSTERIX
+                </h1>
               </div>
             </div>
 
