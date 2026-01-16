@@ -42,7 +42,7 @@ export function Header({ searchQuery, setSearchQuery, cartItemCount, onCartClick
     },
     {
       label: 'Multi Posters Collections',
-      submenu: ['Trending', 'Best Sellers', 'New Arrivals', 'Sale'],
+      submenu: ['Trending', 'Best Sellings', 'New Arrivals', 'Sale', 'Cricket', 'Football', 'F1', 'Nature', 'Movies', 'Music', 'Anime', 'Gaming', 'Quotes', 'Art', 'Animals', 'Travel', 'Space', 'Cars', 'Boats', 'Superheros', '50-piece collage kit', '30-piece collage kit', '10-piece collage kit' ],
     },
     {
       label: 'Retro Photo Prints',
