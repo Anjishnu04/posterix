@@ -52,10 +52,6 @@ export function Header({ searchQuery, setSearchQuery, cartItemCount, onCartClick
       label: 'Custom Posters',
       submenu: ['Design Your Own', 'Upload Image', 'Templates'],
     },
-    {
-      label: 'New Arrivals',
-      submenu: ['This Week', 'This Month', 'This Year'],
-    }
   ];
 
   const sideItems = ['Stickers', 'Bulk Posters', 'Reviews'];
