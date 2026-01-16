@@ -52,6 +52,10 @@ export function Header({ searchQuery, setSearchQuery, cartItemCount, onCartClick
       label: 'Custom Posters',
       submenu: ['Design Your Own', 'Upload Image', 'Templates'],
     },
+    {
+      label: 'New Arrivals',
+      submenu: ['This Week', 'This Month', 'This Year'],
+    }
   ];
 
   const sideItems = ['Stickers', 'Bulk Posters', 'Reviews'];
@@ -70,7 +74,7 @@ export function Header({ searchQuery, setSearchQuery, cartItemCount, onCartClick
                   className="text-3xl sm:text-5xl font-black text-black text-center tracking-tight" 
                   style={{
                     fontFamily: 'Impact, Arial Black, sans-serif', 
-                    letterSpacing: '-0.03em', 
+                    letterSpacing: '-0.02em', 
                     fontWeight: 900,
                     textShadow: '3px 3px 0px rgba(0,0,0,0.15), 6px 6px 0px rgba(59, 130, 246, 0.3), 9px 9px 0px rgba(0,0,0,0.1)'
                   }}
