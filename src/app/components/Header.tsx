@@ -69,7 +69,7 @@ export function Header({ searchQuery, setSearchQuery, cartItemCount, onCartClick
                   className="text-5xl font-black text-black text-center tracking-tight" 
                   style={{
                     fontFamily: 'Impact, Arial Black, sans-serif', 
-                    letterSpacing: '-0.02em', 
+                    letterSpacing: '-0.03em', 
                     fontWeight: 900,
                     textShadow: '3px 3px 0px rgba(0,0,0,0.15), 6px 6px 0px rgba(59, 130, 246, 0.3), 9px 9px 0px rgba(0,0,0,0.1)'
                   }}
